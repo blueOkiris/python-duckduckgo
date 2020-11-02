@@ -51,7 +51,7 @@ def query(query, useragent='python-duckduckgo '+str(__version__), safesearch=Tru
     url = 'http://api.duckduckgo.com/?' + encparams
 
     request = urllib.request.Request(url, headers={'User-Agent': useragent})
-    response = urllib.request.urlopen(request)
+    response = urllib2.request.urlopen(request)
     json = j.loads(response.read())
     response.close()
 
